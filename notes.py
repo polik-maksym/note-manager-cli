@@ -55,5 +55,34 @@ def list_notes()-> None:
 
 def get_note_by_number(notes: list[dict], number: int)-> dict | None:
     if 1 <= number <= len(notes):
-        return notes[number-1]
+        return notes[number - 1]
     return None
+
+def view_note()-> None:
+    notes = load_notes()
+
+    if not notes:
+        print("Нотаток ще немає.")
+        return
+
+    list_notes()
+
+    number = int(input("Вкажить номер нотатки: "))
+
+    note = get_note_by_number(notes, number)
+    if not note:
+        print("Нотатки за таким номером не існує.")
+        return
+
+    print(f"ID: {note['id']}")
+    print(f"Заголовок: {note['title']}")
+    print(f"Текст: {note['text']}")
+    print(f"Теги: {", ".join(note['tags'])}")
+    print(f"Створено: {note['created_at']}")
+
+
+
+
+
+
+
