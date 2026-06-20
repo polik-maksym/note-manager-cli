@@ -1,0 +1,10 @@
+
+
+CREATE_NOTE = '1'
+LIST_NOTES = '2'
+VIEW_NOTE = '3'
+EDIT_NOTE = '4'
+DELETE_NOTE = '5'
+SEARCH = '6'
+EXPORT = '7'
+QUIT = '8'
