@@ -79,6 +79,7 @@ def view_note()-> None:
     print(f"Текст: {note['text']}")
     print(f"Теги: {", ".join(note['tags'])}")
     print(f"Створено: {note['created_at']}")
+    print(make_separator(note['text']))
 
 
 
