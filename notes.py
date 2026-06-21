@@ -82,8 +82,38 @@ def view_note()-> None:
     print(make_separator(note['text']))
 
 
+def delete_note()-> None:
+    notes = load_notes()
+
+    if not notes:
+        print("Нотаток ще немає.")
+        return
+
+    list_notes()
+    number = int(input("Вкажіть номер нотатки для видалення: "))
+
+    note = get_note_by_number(notes, number)
 
 
+    if not note:
+        print("Нотатки за таким номером не існує.")
+        return
+
+    answer = input(
+            f"Ви впевнені, що бажаєте видалити нотатку № {number} ('y/n')"
+            ).strip().lower()
+
+    while answer not in ("y", "n"):
+        answer = input("Неправильний ввід! " 
+                        "Введіть або y або n: ").strip().lower()
+
+    if answer == 'n':
+        return
+
+    notes.remove(note)
+    save_notes(notes)
+
+    print(f"Нотатка № {number} успішно видалена.")
 
 
 
