@@ -5,7 +5,7 @@
 ###############################################################################
 
 import constants
-from notes import create_note, list_notes
+from notes import create_note, list_notes, view_note
 
 
 
@@ -15,7 +15,7 @@ def main_menu()-> None:
     options = [
         (constants.CREATE_NOTE, "Створити нотатку"),
         (constants.LIST_NOTES,  "Переглянути всі нотатки"),
-        (constants.VIEW_NOTE,   "Переглянути нотатку за ID"),
+        (constants.VIEW_NOTE,   "Переглянути нотатку"),
         (constants.EDIT_NOTE,   "Редагувати нотатку"),
         (constants.DELETE_NOTE, "Видалити нотатку"),
         (constants.SEARCH,      "Пошук"),
@@ -32,6 +32,7 @@ def main_menu()-> None:
     actions = {
         constants.CREATE_NOTE: create_note,
         constants.LIST_NOTES: list_notes,
+        constants.VIEW_NOTE: view_note,
         constants.QUIT: lambda: exit(),
     }
 
