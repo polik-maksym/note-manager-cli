@@ -25,11 +25,14 @@ def parse_tags(tags_input: str)-> list[str]:
 
 
 
-def make_separator(text: str, min_length: int = 40, char_sep: str = "-" )-> str:
+def make_separator(length: int = 40, char: str = "-" )-> str:
     """
-    повертає роздільник, довжина якого дорівнює довжині тексту,
-    але не менше за min_length
-    text - для визначення line_length
+    Повертає рядок-роздільник.
+
+    Args:
+        length: довжина роздільника.
+        char: символ роздільника.
+    Returns:
+        Рядок із символів char.
     """
-    line_length = max(min_length, len(text))
-    return char_sep * line_length
+    return char * length
