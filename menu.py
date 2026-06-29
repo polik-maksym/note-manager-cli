@@ -5,7 +5,7 @@
 ###############################################################################
 
 import constants
-from notes import create_note, delete_note, edit_note, list_notes, view_note
+from notes import create_note, delete_note, edit_note, list_notes, search_by_tag, view_note
 
 
 
@@ -35,6 +35,7 @@ def main_menu()-> None:
         constants.VIEW_NOTE: view_note,
         constants.EDIT_NOTE: edit_note,
         constants.DELETE_NOTE: delete_note,
+        constants.SEARCH: search_by_tag,
         constants.QUIT: lambda: exit(),
     }
 

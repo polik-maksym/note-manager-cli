@@ -152,3 +152,39 @@ def edit_note()-> None:
     save_notes(notes)
 
     print(f"Нотатку № {number} успішно оновлено.")
+
+
+def find_notes_by_tag(notes: list[dict], target_tag: str)-> list[dict]:
+    found_notes = []
+
+    for note in notes:
+        note_tags = [tag.lower() for tag in note['tags']]
+
+        if target_tag in note_tags:
+            found_notes.append(note)
+
+    return found_notes
+
+
+def search_by_tag()-> None:
+    notes = load_notes()
+
+    if not notes:
+        print("Нотаток поки немає.")
+        return
+
+    target_tag = input("Введіть тег для пошуку: ").strip().lower()
+
+    if not target_tag:
+        print("Тег не може бути порожнім.")
+        return
+
+    found_notes = find_notes_by_tag(notes, target_tag)
+
+    if not found_notes:
+        print(f'Нотаток із тегом "{target_tag}" не знайдено.')
+        return
+
+    for note in found_notes:
+        print_note(note)
+
