@@ -13,14 +13,14 @@ from notes import create_note, delete_note, edit_note, list_notes, search_by_tag
 def main_menu()-> None:
 
     options = [
-        (constants.CREATE_NOTE, "Створити нотатку"),
-        (constants.LIST_NOTES,  "Переглянути всі нотатки"),
-        (constants.VIEW_NOTE,   "Переглянути нотатку"),
-        (constants.EDIT_NOTE,   "Редагувати нотатку"),
-        (constants.DELETE_NOTE, "Видалити нотатку"),
-        (constants.SEARCH,      "Пошук"),
-        (constants.EXPORT,      "Експорт"),
-        (constants.QUIT,        "Вихід"),
+        (constants.CREATE_NOTE,    "Створити нотатку"),
+        (constants.LIST_NOTES,     "Переглянути всі нотатки"),
+        (constants.VIEW_NOTE,      "Переглянути нотатку"),
+        (constants.EDIT_NOTE,      "Редагувати нотатку"),
+        (constants.DELETE_NOTE,    "Видалити нотатку"),
+        (constants.SEARCH_BY_TAG,   "Пошук за тегом"),
+        (constants.EXPORT,         "Експорт"),
+        (constants.QUIT,           "Вихід"),
     ]
 
     print("\n=== Менеджер нотаток ===")
@@ -35,7 +35,7 @@ def main_menu()-> None:
         constants.VIEW_NOTE: view_note,
         constants.EDIT_NOTE: edit_note,
         constants.DELETE_NOTE: delete_note,
-        constants.SEARCH: search_by_tag,
+        constants.SEARCH_BY_TAG: search_by_tag,
         constants.QUIT: lambda: exit(),
     }
 
